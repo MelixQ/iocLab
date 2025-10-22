@@ -11,7 +11,6 @@ import org.springframework.scheduling.annotation.EnableAsync;
 import ru.kuznetsovMD.iocLab.task1.HelloService;
 import ru.kuznetsovMD.iocLab.task14.ConfigService;
 import ru.kuznetsovMD.iocLab.task15.NotificationService;
-import ru.kuznetsovMD.iocLab.task15.ServiceConfiguration;
 import ru.kuznetsovMD.iocLab.task16.CustomObject;
 import ru.kuznetsovMD.iocLab.task17.DevConfig;
 import ru.kuznetsovMD.iocLab.task17.ProdConfig;
@@ -26,10 +25,8 @@ import ru.kuznetsovMD.iocLab.task26.CachedService;
 import ru.kuznetsovMD.iocLab.task27.AsyncService;
 import ru.kuznetsovMD.iocLab.task3.User;
 import ru.kuznetsovMD.iocLab.task3.UserService;
-import ru.kuznetsovMD.iocLab.task4.Product;
 import ru.kuznetsovMD.iocLab.task4.ProductService;
-import ru.kuznetsovMD.iocLab.task5.Order;
-import ru.kuznetsovMD.iocLab.task5.OrderService;
+import ru.kuznetsovMD.iocLab.task5.OrderServiceTask5;
 import ru.kuznetsovMD.iocLab.task6.AppConfig;
 import ru.kuznetsovMD.iocLab.task7.FuelServiceConsumer;
 import ru.kuznetsovMD.iocLab.task8.XmlUserService;
@@ -46,7 +43,7 @@ public class IocLabApplication implements CommandLineRunner {
 	@Autowired private GreetingService greetingService;
 	@Autowired private UserService userService;
 	@Autowired private ProductService productService;
-	@Autowired private OrderService orderService;
+	@Autowired private OrderServiceTask5 orderServiceTask5;
 	@Autowired private FuelServiceConsumer consumerService;
 	@Autowired private XmlUserService xmlUserService;
 	@Autowired private SingletonService singletonBean;
@@ -77,14 +74,14 @@ public class IocLabApplication implements CommandLineRunner {
 		helloService.sayHello();
 		greetingService.greet();
 		userService.registerUser(new User());
-		productService.saveProduct(new Product("test"));
+		/*productService.saveProduct(new Product("test"));
 		orderService.placeOrder(new Order());
 		consumerService.consumeFuel();
 		xmlUserService.getUser();
 		singletonBean.doSomething();
 		prototypeBean.doSomething();
-		configService.getAppConfig();
-		notificationService.configure(new ServiceConfiguration());
+		configService.getAppConfig();*/
+		/*notificationService.configure(new ServiceConfiguration());
 		System.out.println("16. CustomObject: " + customObject.getName());
 		collectionService.showCart();
 		System.out.println("20. DemoService: " + demoService.greet());
@@ -94,7 +91,7 @@ public class IocLabApplication implements CommandLineRunner {
 		componentScanClient.useScanService();
 		System.out.println("26. CacheService: " + cacheService.expensiveOp(20));
 		System.out.println("26. CacheService (cached): " + cacheService.expensiveOp(20));
-		asyncService.getResult().thenAccept(result -> System.out.println("27. Async: " + result));
+		asyncService.getResult().thenAccept(result -> System.out.println("27. Async: " + result));*/
 
 		if (devConfig != null) System.out.println("17. Dev Config: " + devConfig.databaseService());
 		if (prodConfig != null) System.out.println("17. Prod Config: " + prodConfig.databaseService());

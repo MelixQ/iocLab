@@ -9,4 +9,6 @@ public class PrototypeService {
     public void doSomething() {
         System.out.println("Prototype doSomething");
     }
+
+    // Присваивает одному определению компонента любое количество экземпляров объектов.
 }

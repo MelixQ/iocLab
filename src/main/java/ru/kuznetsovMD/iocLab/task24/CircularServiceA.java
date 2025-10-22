@@ -5,18 +5,18 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class CircularServiceA {
-    private final CircularServiceB circularServiceB;
+    private CircularServiceB serviceB;
 
     @Autowired
-    public CircularServiceA(CircularServiceB circularServiceB) {
-        this.circularServiceB = circularServiceB;
+    public void setServiceB(CircularServiceB serviceB) {
+        this.serviceB = serviceB;
     }
 
     public String callB() {
-        return circularServiceB.callA();
+        return serviceB.getMessage();
     }
 
     public String getMessage() {
-        return "Circular Service A";
+        return "Message from A";
     }
 }

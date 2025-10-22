@@ -4,11 +4,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class OrderService {
+public class OrderServiceTask5 {
     @Autowired
-    private OrderRepository orderRepository;
+    private OrderRepositoryTask5 orderRepositoryTask5;
 
     public void placeOrder(Order order) {
-        orderRepository.save(order);
+        orderRepositoryTask5.save(order);
     }
 }

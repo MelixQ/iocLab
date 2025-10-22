@@ -1,4 +1,12 @@
-<beans xmlns="http://www.springframework.org/schema/beans">
-    <bean id="xmlUserRepository" class="ru.kuznetsovMD.iocLab.task8.UserRepository"/>
-    <bean id="xmlUserService" class="ru.kuznetsovMD.iocLab.task8.UserService"/>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="xmlUserRepository" class="ru.kuznetsovMD.iocLab.task8.XmlUserRepository"/>
+    <bean id="xmlUserServiceBean" class="ru.kuznetsovMD.iocLab.task8.XmlUserService">
+        <property name="xmlUserRepository" ref="xmlUserRepository"/>
+    </bean>
+
 </beans>

@@ -1,0 +1,4 @@
+<beans xmlns="http://www.springframework.org/schema/beans">
+    <bean id="xmlUserRepository" class="ru.kuznetsovMD.iocLab.task8.UserRepository"/>
+    <bean id="xmlUserService" class="ru.kuznetsovMD.iocLab.task8.UserService"/>
+</beans>
